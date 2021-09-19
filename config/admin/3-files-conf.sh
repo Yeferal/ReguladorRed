@@ -28,6 +28,9 @@ done
 
 if [ $MODE -eq 2 ]; then CEIL="ceil ${BWG}Kbit"; fi #Cadena que se agregará si es el modo dinámico
 
+rm -rf script.sh
+mkdir script.sh
+chmod 777 script.sh
 
 FICHERO_USER_BW='../archivos/list-users-bw.conf'
 
@@ -87,6 +90,12 @@ else
    	echo "El fichero $FICHERO_USER_PROTOCOL no existe, no se puede realizar la configuracion."
    	exit
 fi
+
+
+echo "echo \"sh script.sh\" | at tomorrow " >> script.sh
+
+sh script.sh
+
 echo
 
 echo
