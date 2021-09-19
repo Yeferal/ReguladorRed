@@ -37,20 +37,18 @@ then
 	while read -r linea
 	do
 	  #echo "$linea" son 5 parametros, mac,bajada,subida,horainicio,horafin
-	  	IN=$linea
-		arrIN=(${IN//,/ }) 
-	    BWDT=${arrIN[1]}; #porcentaje de ancho de banda de bajada
-	    BWUT=${arrIN[2]}; #porcentaje de ancho de banda de subida
+	  	IFS=','
+	    read -a parametros <<< "$linea"
+	    BWDT=${parametros[1]}; #porcentaje de ancho de banda de bajada
+	    BWUT=${parametros[2]}; #porcentaje de ancho de banda de subida
 	    ((BWTT=(BWD*1024*BWDT/100)+(BWU*1024*BWUT/100))) #cantidad de ancho de banda a dar a la clase en Kbit
 	    IFS=":"
-	    read -a hora_inicio <<< "${arrIN[3]}" #Dividir 12:14 en 12 y 14
-	    read -a hora_fin <<< "${arrIN[4]}"
+	    read -a horarios_inicio <<< "${parametros[3]}" #Dividir 12:14 en 12 y 14
+	    read -a horarios_fin <<< "${parametros[4]}"
 	    IFS=""
-	    #Programar los cambios en el ancho de bandaecho
-	    #echo "./insertar-crontab.sh ${hora_inicio[1]} ${hora_inicio[0]} $BWTT ${arrIN[0]} $CEIL";
-	    ./insertar-crontab.sh ${hora_inicio[1]} ${hora_inicio[0]} $BWTT ${arrIN[0]} $CEIL
-	    #echo "./insertar-crontab.sh ${hora_fin[1]} ${hora_fin[0]} 0 ${arrIN[0]}";
-	    ./insertar-crontab.sh ${hora_fin[1]} ${hora_fin[0]} 0 ${arrIN[0]}
+	    #Programar los cambios en el ancho de banda
+	    ./insertar-crontab.sh ${horarios_inicio[1]} ${horarios_inicio[0]} $BWTT ${parametros[0]} $CEIL
+	    ./insertar-crontab.sh ${horarios_fin[1]} ${horarios_fin[0]} 1 ${parametros[0]}
 	done < $FICHERO_USER_BW
 else
    	echo "El fichero $FICHERO no existe, no se puede realizar la configuracion."
