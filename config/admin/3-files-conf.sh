@@ -3,7 +3,7 @@
 read -p "Ingrese el el minimo de ancho de banda (down): " BWD;
 read -p "Ingrese el el maximo de ancho de banda (up): " BWU;
 
-BWG=((BWD+BWU)*1024) #ancho de banda total (bajada y subida) en Kbit
+((BWG=(BWD+BWU)*1024)) #ancho de banda total (bajada y subida) en Kbit
 echo "*********************************************"
 echo "* El ancho de banda total es de: ${BWG}Kbit *"
 echo "*********************************************"
