@@ -1,23 +1,23 @@
 #!/bin/bash
 
 #Verificacion de archivos de dependencias
-if ! command -v tc &> /dev/null
-then
-    echo "No se reconoce el comando tc, debe de instalarlo primero."
-    exit
-fi	
-
-if ! command -v iptables &> /dev/null
-then
-    echo "No se reconoce el comando iptables, debe de instalarlo primero."
-    exit
-fi
-
-if ! command -v crontab &> /dev/null
-then
-    echo "No se reconoce el comando crontab, debe de instalarlo primero."
-    exit
-fi 
+# if ! command -v tc &> /dev/null
+# then
+#     echo "No se reconoce el comando tc, debe de instalarlo primero."
+#     exit
+# fi
+#
+# if ! command -v iptables &> /dev/null
+# then
+#     echo "No se reconoce el comando iptables, debe de instalarlo primero."
+#     exit
+# fi
+#
+# if ! command -v crontab &> /dev/null
+# then
+#     echo "No se reconoce el comando crontab, debe de instalarlo primero."
+#     exit
+# fi
 
 
 #configuracion de los iptables, para evitar que alguien intente entrar fuera de la maquina
@@ -44,7 +44,7 @@ then
 	while read -r linea
 	do
 		IN=$linea
-		arrIN=(${IN//;/ }) 
+		arrIN=(${IN//=/ })
 		if [ ${arrIN[0]} == "MAC1" ]; then MAC1=${arrIN[1]}; fi
 	    if [ ${arrIN[0]} == "MAC2" ]; then MAC2=${arrIN[1]}; fi
 	    if [ ${arrIN[0]} == "MAC3" ]; then MAC3=${arrIN[1]}; fi
