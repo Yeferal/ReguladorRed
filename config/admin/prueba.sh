@@ -56,17 +56,17 @@ mac3="MAC3";
 
 echo "$macname"="$mac1"
 
-if [[ $1== "MAC1" ]]; then
+if [[ $macname == "MAC1" ]]; then
     echo "1";
 else
 	echo "no es 1";
 fi
 
-if [[ $1 == "MAC2" ]]; then
+if [[ $macname == "MAC2" ]]; then
     echo "2";
 fi
 
-if [[ $1== "MAC3" ]]; then
+if [[ $macname == "MAC3" ]]; then
     echo "3";
 fi
 
