@@ -40,7 +40,7 @@ FICHERO='../archivos/list-mac.conf'
 
 if [ -f $FICHERO ]
 then
-	echo "El fichero $FICHERO existe."
+	echo "El fichero $FICHERO existe.";
 	while read -r linea
 	do
 		IN=$linea
@@ -50,7 +50,7 @@ then
 	    if [ ${arrIN[0]} == "MAC3" ]; then MAC3=${arrIN[1]}; fi
 	done < $FICHERO
 else
-   	echo "El fichero $FICHERO no existe, no se puede realizar la configuracion."
+   	echo "El fichero $FICHERO no existe, no se puede realizar la configuracion.";
    	exit
 fi
 
@@ -81,4 +81,4 @@ filter_mac $MAC1 1:11
 filter_mac $MAC2 1:12
 filter_mac $MAC3 1:13
 
-echo "Se han finalizado las configuraciones predeterminadas iniciales..."
+echo "Se han finalizado las configuraciones predeterminadas iniciales...";
