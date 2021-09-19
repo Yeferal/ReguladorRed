@@ -1,25 +1,5 @@
 #!/bin/bash
 
-#Verificacion de archivos de dependencias
-# if ! command -v tc &> /dev/null
-# then
-#     echo "No se reconoce el comando tc, debe de instalarlo primero."
-#     exit
-# fi
-#
-# if ! command -v iptables &> /dev/null
-# then
-#     echo "No se reconoce el comando iptables, debe de instalarlo primero."
-#     exit
-# fi
-#
-# if ! command -v crontab &> /dev/null
-# then
-#     echo "No se reconoce el comando crontab, debe de instalarlo primero."
-#     exit
-# fi
-
-
 #configuracion de los iptables, para evitar que alguien intente entrar fuera de la maquina
 echo "iptables -P INPUT DROP ";
 iptables -P INPUT DROP 
