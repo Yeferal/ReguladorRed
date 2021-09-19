@@ -46,8 +46,10 @@ then
 	    read -a hora_inicio <<< "${arrIN[3]}" #Dividir 12:14 en 12 y 14
 	    read -a hora_fin <<< "${arrIN[4]}"
 	    IFS=""
-	    #Programar los cambios en el ancho de banda
+	    #Programar los cambios en el ancho de bandaecho
+	    echo "./insertar-crontab.sh ${hora_inicio[1]} ${hora_inicio[0]} $BWTT ${arrIN[0]} $CEIL";
 	    ./insertar-crontab.sh ${hora_inicio[1]} ${hora_inicio[0]} $BWTT ${arrIN[0]} $CEIL
+	    echo "./insertar-crontab.sh ${hora_fin[1]} ${hora_fin[0]} 0 ${arrIN[0]}";
 	    ./insertar-crontab.sh ${hora_fin[1]} ${hora_fin[0]} 0 ${arrIN[0]}
 	done < $FICHERO_USER_BW
 else
@@ -57,7 +59,7 @@ fi
 
 
 #LEYENDO EL ARCHIVO DE TEXTO USUARIO-PROTO.CONF-----------------------------------------------
-echo "Leyendo el archivo de texto usuario-proto---------------------------------------------------------------------------------------------------------------"
+echo "Leyendo el archivo de texto users-protocol.conf---------------------------------------------------------------------------------------------------------------"
 
 FICHERO_USER_PROTOCOL='../archivos/users-protocol.conf'
 

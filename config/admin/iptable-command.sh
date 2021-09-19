@@ -9,9 +9,9 @@ while read -r linea
 do
     IFS='='
     read -a parametros <<< "$linea"
-    if [ ${parametros[0]} == "MAC1" ] && [ $3 == "MAC1" ]; then MAC=${parametros[1]}; fi
-    if [ ${parametros[0]} == "MAC2" ] && [ $3 == "MAC2" ]; then MAC=${parametros[1]}; fi
-    if [ ${parametros[0]} == "MAC3" ] && [ $3 == "MAC3" ]; then MAC=${parametros[1]}; fi
+    if [ ${parametros[0]}=="MAC1" ] && [ $3=="MAC1" ]; then MAC=${parametros[1]}; fi
+    if [ ${parametros[0]}=="MAC2" ] && [ $3=="MAC2" ]; then MAC=${parametros[1]}; fi
+    if [ ${parametros[0]}=="MAC3" ] && [ $3=="MAC3" ]; then MAC=${parametros[1]}; fi
 done < ../archivos/list-mac.conf
 
 IFS=":"
