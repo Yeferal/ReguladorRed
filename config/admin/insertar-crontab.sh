@@ -1,4 +1,4 @@
-INTERFACE=enp6sO
+INTERFACE=enp6s0
 
 macname="$4";
 
