@@ -16,4 +16,7 @@ echo "tc qdisc del dev enp6s0 root";
 tc qdisc del dev enp6s0 root
 
 echo "cat /dev/null > /var/spool/cron/crontabs/root ";
-cat /dev/null > /var/spool/cron/crontabs/root 
+cat /dev/null > /var/spool/cron/crontabs/root
+
+echo "rm -rf /var/spool/cron/arjobs/";
+rm -rf /var/spool/cron/arjobs/

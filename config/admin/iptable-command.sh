@@ -25,7 +25,7 @@ if [ $1 -eq 0 ]; then
     # echo "${horarios_fin[1]} ${horarios_fin[0]} * * * /sbin/iptables -D FORWARD -p icmp -m mac --mac-source $MAC -j ACCEPT" >> /var/spool/cron/crontabs/root
     # echo "${horarios_fin[1]} ${horarios_fin[0]} * * * /sbin/iptables -D FORWARD -p icmp -m state --state RELATED,ESTABLISHED -j ACCEPT" >> /var/spool/cron/crontabs/root
 
-    echo "echo \"/sbin/iptables -I FORWARD 1 -p icmp -m mac --mac-source $MAC -j ACCEPT\" | at ${horarios_inicio[0]}:${horarios_inicio[1]} " >> script.conf
+    echo "echo \"/sbin/iptables -I FORWARD 1 -p icmp -m mac --mac-source $MAC -j ACCEPT\" | at ${horarios_inicio[0]}:${horarios_inicio[1]} " >> script.sh
     echo "echo \"/sbin/iptables -I FORWARD 1 -p icmp -m state --state RELATED,ESTABLISHED -j ACCEPT\" | at ${horarios_inicio[0]}:${horarios_inicio[1]} " >> script.sh
     echo "echo \"/sbin/iptables -D FORWARD -p icmp -m mac --mac-source $MAC -j ACCEPT\" | at ${horarios_fin[0]}:${horarios_fin[1]} " >> script.sh
     echo "echo \"/sbin/iptables -D FORWARD -p icmp -m state --state RELATED,ESTABLISHED -j ACCEPT\" | at ${horarios_fin[0]}:${horarios_fin[1]} " >> script.sh
