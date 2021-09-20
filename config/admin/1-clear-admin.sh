@@ -19,4 +19,4 @@ echo "cat /dev/null > /var/spool/cron/crontabs/root ";
 cat /dev/null > /var/spool/cron/crontabs/root
 
 echo "rm -rf /var/spool/cron/arjobs/*";
-rm -rf /var/spool/cron/arjobs/*
+rm -rf /var/spool/cron/atjobs/*
