@@ -12,8 +12,8 @@ iptables -P OUTPUT ACCEPT
 echo "iptables -P FORWARD ACCEPT";
 iptables -P FORWARD ACCEPT
 
-echo "tc qdisc del dev enp6s0 root";
-tc qdisc del dev enp6s0 root
+echo "tc qdisc del dev enp0s8 root";
+tc qdisc del dev enp0s8 root
 
 echo "cat /dev/null > /var/spool/cron/crontabs/root ";
 cat /dev/null > /var/spool/cron/crontabs/root
