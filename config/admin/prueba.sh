@@ -76,12 +76,7 @@ echo "$macname|";
 
 FICHERO_SCRIPT='./script.sh';
 
-if [ -f $FICHERO_SCRIPT ]; then
-    echo "Existe";
-    ls
-    rm -rf script.sh
-else
-    echo "no existe";
-    mkdir script.sh
-    chmod 777 script.sh
-fi
+touch script.sh
+chmod 777 script.sh
+
+echo "echo \"ls\" | at 18:00 " >> script.sh

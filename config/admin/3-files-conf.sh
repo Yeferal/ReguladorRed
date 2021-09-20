@@ -29,7 +29,7 @@ done
 if [ $MODE -eq 2 ]; then CEIL="ceil ${BWG}Kbit"; fi #Cadena que se agregará si es el modo dinámico
 
 rm -rf script.sh
-mkdir script.sh
+touch script.sh
 chmod 777 script.sh
 
 FICHERO_USER_BW='../archivos/list-users-bw.conf'
