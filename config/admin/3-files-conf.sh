@@ -96,6 +96,10 @@ echo "echo \"sh script.sh\" | at tomorrow " >> script.sh
 
 sh script.sh
 
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+
 echo
 
 echo
